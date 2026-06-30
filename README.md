@@ -14,8 +14,11 @@ The application features a dark, cinematic aesthetic using a charcoal and warm g
 - **Wallet Integration:** Built using `@creit.tech/stellar-wallets-kit`, supporting Freighter, xBull, and Albedo.
 - **Live Event Sync:** Polls `getEvents` from the RPC to dynamically update the highest bid and live activity feed.
 
-## Deployed Details (Testnet)
+## Submission Details
 
+- **Live Demo Link:** *Pending deployment* (Optional)
+- **Screenshot of Wallet Options:**
+  ![Wallet Options](./public/wallet-options.png)
 - **Contract ID:** `CDETLPQATPAHV56B5XHLTHZVWX6BLRPG7RVBJJOX6LEW47FPLOAVUDPR`
 - **Sample Transaction Hash (place_bid / init):** `edd9247250821a3223479d5c3976ff4ba2a2de22d9491bd13990edb33af80a52`
 - **Explorer Link:** [Stellar Expert (Testnet)](https://stellar.expert/explorer/testnet/contract/CDETLPQATPAHV56B5XHLTHZVWX6BLRPG7RVBJJOX6LEW47FPLOAVUDPR)
