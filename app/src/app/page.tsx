@@ -38,7 +38,7 @@ export default function Home() {
     setIsConnecting(true);
     setError(null);
     try {
-      const kit = getWalletKit();
+      const kit = await getWalletKit();
       kit.setWallet(walletId);
       const { address } = await kit.getAddress();
       setAddress(address);

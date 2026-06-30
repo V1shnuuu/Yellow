@@ -1,21 +1,21 @@
-import { StellarWalletsKit } from '@creit.tech/stellar-wallets-kit';
-import { defaultModules } from '@creit.tech/stellar-wallets-kit/modules/utils';
+let walletKit: any = null;
 
-let isInitialized = false;
-
-export function getWalletKit() {
+export async function getWalletKit() {
   if (typeof window === 'undefined') {
     throw new Error('Cannot initialize wallet kit on server');
   }
   
-  if (!isInitialized) {
+  if (!walletKit) {
+    const { StellarWalletsKit } = await import('@creit.tech/stellar-wallets-kit');
+    const { defaultModules } = await import('@creit.tech/stellar-wallets-kit/modules/utils');
+    
     StellarWalletsKit.init({
       network: "Test SDF Network ; September 2015" as any,
       selectedWalletId: "freighter",
       modules: defaultModules()
     });
-    isInitialized = true;
+    walletKit = StellarWalletsKit;
   }
   
-  return StellarWalletsKit;
+  return walletKit;
 }

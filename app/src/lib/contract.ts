@@ -62,7 +62,7 @@ export async function fetchAuctionState(contractId: string) {
 }
 
 export async function placeBid(contractId: string, userAddress: string, amount: number) {
-  const kit = getWalletKit();
+  const kit = await getWalletKit();
   const server = new rpc.Server(RPC_URL);
   const contract = new Contract(contractId);
   const account = await server.getAccount(userAddress);
@@ -112,7 +112,7 @@ export async function placeBid(contractId: string, userAddress: string, amount: 
   }
 
   // Assemble the transaction using the simulation data (resource footprint)
-  tx = rpc.assembleTransaction(tx, NETWORK_PASSPHRASE, simResult).build();
+  tx = rpc.assembleTransaction(tx, simResult).build();
 
   // 2. Sign transaction with WalletKit
   let signedXdr;
